@@ -8,7 +8,7 @@ from sklearn.cluster import KMeans
 from sklearn import preprocessing
 import pandas as pd
 
-df = pd.read_excel('titanicdata.xls')
+df = pd.read_excel('titanic.xls')
 #print(df.head(10))
 df.drop(['body','name'], 1, inplace=True)
 df.infer_objects()
