@@ -43,14 +43,15 @@ X = np.array(df.drop(['sex'], 1).astype(float))
 #X = preprocessing.scale(X)
 Y = np.array(df['survived'])
 
-clf = KMeans(n_clusters=5)
+clf = KMeans(n_clusters=10)
 clf.fit(X)
 centroids = clf.cluster_centers_
 labels = clf.labels_
-colors = ["g.","b.","r.","c.","y."]
+#colors = ["g.","b.","r.","c.","y."]
 for i in range(len(X)):
     #print("Coordinate : ", X[i]," Label : ", labels[i])
-    plt.plot(X[i][0], X[i][1], colors[labels[i]], markersize = 5)
+    #plt.plot(X[i][0], X[i][1], colors[labels[i]], markersize = 5)
+    plt.plot(X[i][0], X[i][1], markersize=5)
     plt.ylabel('Survivors')
 plt.scatter(centroids[:, 0], centroids[:, 1], marker=".", s=50, linewidths=2, zorder=2)
 plt.show()
